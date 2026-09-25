@@ -1,5 +1,9 @@
 # 🛰️ Airborne Defense Command Center (Digital Twin & SIL Simulation)
 
+<div align="center">
+  <img src="interceptor.png" alt="Unified Single-Body Kinetic Interceptor Technical Schematic" width="100%" />
+</div>
+
 An executive-level **Software-In-The-Loop (SIL) simulation dashboard** for an air-launched 1.8m single-body kinetic interceptor operating in low-density, high-altitude atmospheric conditions.
 
 ---

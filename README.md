@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🛰️ Airborne Defense Command Center (Digital Twin & SIL Simulation)
 
-# Run and deploy your AI Studio app
+An executive-level **Software-In-The-Loop (SIL) simulation dashboard** for an air-launched 1.8m single-body kinetic interceptor operating in low-density, high-altitude atmospheric conditions.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/8ab79673-4495-434d-b80a-8d50045c21bd
+## 🎯 Key Engineering Architecture
+- **1.8m Single-Body Composite Casing:** Carbon-composite structural hull engineered to withstand $>30g$ lateral divert thrust without staging latency.
+- **Low-Density Altitude Maneuverability:** Integrates a forward-ring **Mini-DACS (Divert & Attitude Control System)** utilizing cold/solid gas micro-thrusters to achieve instant $90^\circ$ turns where aerodynamic fins fail due to thin atmosphere.
+- **Ka-Band MMW Radar Seeker:** High-frequency millimeter-wave target acquisition resistant to aerothermal optical blinding and ECM jamming.
+- **Cinematic Auto-Patrol Radar Scope:** Real-time HTML5 Canvas tracking platform movement, threat vector homing, and interceptor ejection.
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 🏗️ Command Center Dashboard Layout
 
+| Panel | Core Functionality |
+| :--- | :--- |
+| **Left Panel** | **Interactive Subsystem Blueprint:** Cutaway schematic with active hotspots (Seeker, Mini-DACS, AI Core, Motor) and dynamic material telemetry. |
+| **Center Panel** | **Tactical Radar Scope:** Auto-patrol flight trajectory of `VIPER-01`, slow-motion threat homing, interceptor ejection, and ECM static jamming effects. |
+| **Right Panel** | **Live Telemetry Stream:** Dynamic Mach velocity, distance-to-target tracking, and real-time Threat Assessment Gauge. |
+| **Footer** | **Terminal Log:** Sequential event stream tracking system states in real time. |
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 🚀 Run Locally
+
+### Prerequisites
+- **Node.js** (v18 or higher)
+
+### Setup Steps
+1. **Install dependencies:**
+   ```bash
+   npm install

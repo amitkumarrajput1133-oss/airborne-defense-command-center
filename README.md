@@ -9,7 +9,6 @@
 ## 🔬 Technical Subsystem Breakdown (USBI Architecture)
 
 The **Unified Single-Body Kinetic Interceptor (USBI)** system integrates payload, guidance, and propulsion into a non-separable carbon-composite fuselage to eliminate multi-stage separation latency and maximize thrust-to-weight efficiency.
-
 +-------------------------------------------------------------------------------------------------+
 |                                 USBI COMPONENT LAYOUT MAP                                       |
 +-------------------+--------------------+------------------------+-------------------------------+

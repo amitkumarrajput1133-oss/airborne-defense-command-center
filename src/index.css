@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #040811;
+    color: #c4d7ec;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    overflow-x: hidden;
+    user-select: none;
+  }
+}
+
+.font-hud {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tactical grid scanlines overlay */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 229, 255, 0.02) 50%,
+    rgba(0, 229, 255, 0.02)
+  );
+  background-size: 100% 4px;
+}
+
+.corner-bracket {
+  position: relative;
+}
+.corner-bracket::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #00e5ff;
+  border-left: 2px solid #00e5ff;
+  pointer-events: none;
+  z-index: 10;
+}
+.corner-bracket::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #00e5ff;
+  border-right: 2px solid #00e5ff;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #060d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #173258;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Glass HUD panels */
+.hud-panel {
+  background: rgba(8, 17, 33, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(22, 45, 78, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 0 12px rgba(0, 229, 255, 0.02);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hud-panel:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+}
+
+.hud-active-glow {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.25), inset 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+.hud-danger-glow {
+  box-shadow: 0 0 25px rgba(255, 42, 85, 0.35), inset 0 0 15px rgba(255, 42, 85, 0.15);
+  border-color: rgba(255, 42, 85, 0.6) !important;
+}
+
+/* Hotspot beacon pulse */
+.hotspot-beacon {
+  animation: hotspotPulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes hotspotPulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  70% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}

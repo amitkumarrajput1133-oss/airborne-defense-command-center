@@ -47,7 +47,7 @@ const INITIAL_LOGS: TerminalLog[] = [
 ];
 
 interface TacticalDefenseCommandPageProps {
-  audioEnabled: boolean;
+  audioEnabled?: boolean;
   onNavigateToBlueprint: () => void;
   controlMode: ControlMode;
   setControlMode: (mode: ControlMode) => void;
@@ -60,7 +60,7 @@ interface TacticalDefenseCommandPageProps {
 }
 
 export const TacticalDefenseCommandPage: React.FC<TacticalDefenseCommandPageProps> = ({
-  audioEnabled,
+  audioEnabled = false,
   onNavigateToBlueprint,
   controlMode,
   setControlMode: _setControlMode,

@@ -22,12 +22,11 @@ import { DashboardPage } from './pages/DashboardPage';
 import { SystemArchitecturePage } from './pages/SystemArchitecturePage';
 import { AIPipelinePage } from './pages/AIPipelinePage';
 import { PerformanceMetricsPage } from './pages/PerformanceMetricsPage';
-import { Sparkles, Shield, Radio, Volume2 } from 'lucide-react';
+import { Sparkles, Shield, Radio } from 'lucide-react';
 
 export const App: React.FC = () => {
   // Screen and Mode States
   const [activeTab, setActiveTab] = useState<ScreenMode>('radar');
-  const [audioEnabled, setAudioEnabled] = useState<boolean>(true);
   const [controlMode, setControlMode] = useState<ControlMode>('patrol');
   const [threatLevel, setThreatLevel] = useState<ThreatLevel>('CLEAR');
   const [jetDestroyed, setJetDestroyed] = useState<boolean>(false);
@@ -219,8 +218,6 @@ export const App: React.FC = () => {
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        audioEnabled={audioEnabled}
-        onToggleAudio={() => setAudioEnabled((prev) => !prev)}
         controlMode={controlMode}
         onToggleControlMode={setControlMode}
         threatLevel={threatLevel}
@@ -250,7 +247,6 @@ export const App: React.FC = () => {
         {/* Flagship Tactical Radar & SIL Defense Command Page */}
         {activeTab === 'radar' && (
           <TacticalDefenseCommandPage
-            audioEnabled={audioEnabled}
             onNavigateToBlueprint={() => setActiveTab('blueprint')}
             controlMode={controlMode}
             setControlMode={setControlMode}

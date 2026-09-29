@@ -12,8 +12,6 @@ import {
   Cpu,
   Workflow,
   BarChart3,
-  Volume2,
-  VolumeX,
   Compass,
   Crosshair,
   ShieldCheck,
@@ -25,8 +23,8 @@ import { ControlMode, InterceptionOutcome, ScreenMode, ThreatLevel } from '../ty
 interface HeaderProps {
   activeTab: ScreenMode;
   setActiveTab: (tab: ScreenMode) => void;
-  audioEnabled: boolean;
-  onToggleAudio: () => void;
+  audioEnabled?: boolean;
+  onToggleAudio?: () => void;
   controlMode: ControlMode;
   onToggleControlMode: (mode: ControlMode) => void;
   threatLevel: ThreatLevel;
@@ -46,8 +44,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
-  audioEnabled,
-  onToggleAudio,
   controlMode,
   onToggleControlMode,
   threatLevel,
@@ -232,24 +228,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Global Controls & Status Badges */}
         <div className="flex items-center gap-2 flex-wrap justify-end">
-          {/* Audio Toggle */}
-          <button
-            onClick={onToggleAudio}
-            className={`flex items-center gap-1.5 text-xs font-mono-tech px-2.5 py-1.5 rounded border transition-colors cursor-pointer ${
-              audioEnabled
-                ? 'border-[#1b3a62] bg-[#091322] hover:border-[#00e5ff]/60 text-[#a0c5ea]'
-                : 'border-[#ff2a55]/50 bg-[#16060c] text-[#ff2a55]'
-            }`}
-            title="Toggle Tactical Audio & Synthesized Voice Engine"
-          >
-            {audioEnabled ? (
-              <Volume2 className="w-3.5 h-3.5 text-[#00e5ff]" />
-            ) : (
-              <VolumeX className="w-3.5 h-3.5 text-[#ff2a55]" />
-            )}
-            <span className="hidden sm:inline">{audioEnabled ? 'AUDIO: ON' : 'AUDIO: OFF'}</span>
-          </button>
-
           {/* Flight Control Mode Toggle */}
           <div className="flex items-center bg-[#050c18] border border-[#162a49] rounded p-0.5 font-mono-tech text-[11px]">
             <span className="px-1.5 text-[#5e82a8] text-[10px]">JET:</span>
